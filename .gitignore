@@ -5,3 +5,5 @@
 /.vs/CsharpLearning
 /CsharpLearning/bin/Debug/netcoreapp3.1
 /CsharpLearning/obj
+/CalculatorLibrary/bin/Debug/netstandard2.0
+/CalculatorLibrary/obj

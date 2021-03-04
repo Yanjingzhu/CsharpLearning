@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CalculatorLibrary;
+using System;
 
 namespace CsharpLearning
 {
@@ -7,7 +8,7 @@ namespace CsharpLearning
         static void Main(string[] args)
         {
             bool endApp = false;
-
+            Calculator calculator = new Calculator();
             // Display title as the C# console calculator app.
             Console.WriteLine("Console Calculator in C#\r");
             Console.WriteLine("------------------------\n");
@@ -49,10 +50,12 @@ namespace CsharpLearning
                 Console.Write("Your option? ");
 
                 string op = Console.ReadLine();
+                
 
                 try
                 {
-                    result = Calculator.DoOperation(cleanNum1, cleanNum2, op);
+                    
+                    result = calculator.DoOperation(cleanNum1, cleanNum2, op);
                     if (double.IsNaN(result))
                     {
                         Console.WriteLine("This operation will result in a mathematical error.\n");
@@ -71,8 +74,10 @@ namespace CsharpLearning
 
                 Console.WriteLine("\n"); // Friendly linespacing.
             }
+            // And call to close the JSON writer before return
+            calculator.Finish();
             return;
-            //CONNECT GITHUB
+            
         }
     }
 }
